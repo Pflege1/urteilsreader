@@ -874,13 +874,36 @@ function showDetail(id) {
   lv.style.display = 'none';
   dv.style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Update URL hash so back/forward and direct links work
+  history.pushState({ id }, '', '#urteil-' + id);
 }
 
 function closeDetail() {
   document.getElementById('list-view').style.display = '';
   document.getElementById('detail-view').style.display = 'none';
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  history.pushState({}, '', window.location.pathname);
 }
+
+// Handle browser back/forward buttons
+window.addEventListener('popstate', function(e) {
+  const hash = window.location.hash;
+  if (hash.startsWith('#urteil-')) {
+    const id = parseInt(hash.replace('#urteil-', ''));
+    if (!isNaN(id)) { showDetail(id); return; }
+  }
+  document.getElementById('list-view').style.display = '';
+  document.getElementById('detail-view').style.display = 'none';
+});
+
+// On page load, check if a hash is present and open correct detail
+window.addEventListener('DOMContentLoaded', function() {
+  const hash = window.location.hash;
+  if (hash.startsWith('#urteil-')) {
+    const id = parseInt(hash.replace('#urteil-', ''));
+    if (!isNaN(id)) showDetail(id);
+  }
+});
 
 function toggleFullText() {
   const c = document.getElementById('full-text-content');
