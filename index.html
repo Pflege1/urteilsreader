@@ -6,7 +6,7 @@
 <title>LexPulse – Aktuelle Rechtsprechung</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#1a1410;--ink-light:#3d342a;--cream:#f8f4ee;--cream-dark:#ede8df;--accent:#c0392b;--gold:#b8860b;--rule:#c8b89a;--rule-light:#e0d5c4;--sidebar-bg:#242018;--tag-bg:#f0ebe0;}
+:root{--ink:#1a1410;--ink-light:#3d342a;--cream:#f8f4ee;--cream-dark:#ede8df;--accent:#c0392b;--gold:#b8860b;--rule:#c8b89a;--rule-light:#e0d5c4;--sidebar-bg:#242018;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:var(--ink);min-height:100vh;}
 .masthead{background:var(--ink);color:var(--cream);text-align:center;border-bottom:4px solid var(--accent);}
@@ -14,7 +14,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:va
 .masthead-title{padding:28px 24px 20px;}
 .masthead-title h1{font-family:'Playfair Display',serif;font-size:clamp(48px,8vw,88px);font-weight:900;letter-spacing:-0.02em;line-height:0.95;color:#fff;}
 .masthead-title h1 span{color:var(--accent);}
-.masthead-tagline{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:10px;}
+.tagline{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:10px;}
 .search-strip{background:var(--cream-dark);border-bottom:2px solid var(--rule);padding:14px 24px;display:flex;justify-content:center;}
 .search-wrap{display:flex;width:100%;max-width:640px;border:2px solid var(--ink);background:#fff;box-shadow:3px 3px 0 var(--ink);}
 .search-wrap input{flex:1;border:none;outline:none;padding:12px 16px;font-family:'Source Serif 4',serif;font-size:15px;background:transparent;color:var(--ink);}
@@ -30,9 +30,9 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:va
 .section-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:6px;margin-bottom:20px;}
 .cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);}
 @media(max-width:600px){.cards-grid{grid-template-columns:1fr;}}
-.card{padding:20px;border-bottom:1px solid var(--rule);border-right:1px solid var(--rule);cursor:pointer;background:#fff;transition:background 0.15s;}
+.card{padding:20px;border-bottom:1px solid var(--rule);border-right:1px solid var(--rule);cursor:pointer;background:#fff;transition:background 0.15s;text-decoration:none;display:block;color:inherit;}
 .card:nth-child(even){border-right:none;}
-.card:hover{background:var(--tag-bg);}
+.card:hover{background:var(--cream-dark);}
 .card:hover h2{color:var(--accent);}
 .card.hero{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:28px;border-right:none;}
 .card.hero h2{font-size:24px;line-height:1.2;}
@@ -46,10 +46,11 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:va
 .card-az{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);}
 .card h2{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:8px;color:var(--ink);transition:color 0.15s;}
 .card p{font-size:13.5px;line-height:1.65;color:var(--ink-light);}
-.card-tag{display:inline-block;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;background:var(--tag-bg);border:1px solid var(--rule);color:var(--ink-light);padding:2px 8px;}
+.card-tag{display:inline-block;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;background:var(--cream-dark);border:1px solid var(--rule);color:var(--ink-light);padding:2px 8px;}
+.read-more{display:inline-block;margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--accent);}
 .sidebar-box{background:var(--sidebar-bg);color:#fff;padding:20px;margin-bottom:24px;}
 .sidebar-box .section-label{color:rgba(255,255,255,0.5);border-bottom-color:rgba(255,255,255,0.2);}
-.sitem{padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.08);cursor:pointer;}
+.sitem{padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.08);cursor:pointer;text-decoration:none;display:block;}
 .sitem:last-child{border-bottom:none;}
 .sitem:hover .stitle{color:var(--accent);}
 .stitle{font-family:'Playfair Display',serif;font-size:14px;font-weight:600;color:rgba(255,255,255,0.9);margin-bottom:3px;transition:color 0.15s;}
@@ -60,33 +61,9 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:va
 .glk{font-weight:600;}
 .glv{color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;}
 #no-results{display:none;text-align:center;padding:40px;font-style:italic;color:#888;}
-
-/* DETAIL */
-#detail-view{display:none;max-width:1280px;margin:0 auto;padding:32px 24px;}
-.back-btn{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);cursor:pointer;display:inline-flex;align-items:center;gap:6px;margin-bottom:24px;padding:8px 14px;border:1px solid var(--accent);background:transparent;}
-.back-btn:hover{background:var(--accent);color:#fff;}
-.detail-header{border-bottom:3px solid var(--ink);padding-bottom:20px;margin-bottom:28px;}
-.detail-header h1{font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,34px);font-weight:700;line-height:1.2;margin:12px 0 16px;}
-.leitsatz-box{background:var(--ink);color:#fff;padding:16px 20px;font-style:italic;font-size:15px;line-height:1.7;border-left:4px solid var(--accent);}
-.leitsatz-box strong{color:var(--accent);font-style:normal;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;display:block;margin-bottom:6px;}
-.detail-body{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:40px;}
-@media(max-width:700px){.detail-body{grid-template-columns:1fr;}}
-.sbox{background:#fff;border:1px solid var(--rule);padding:24px;}
-.sbox h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--rule);}
-.sbox p{font-size:14px;line-height:1.75;color:var(--ink-light);margin-bottom:10px;}
-.ft-section{border-top:3px double var(--rule);padding-top:28px;}
-.ft-btn{background:var(--ink);color:#fff;border:none;padding:12px 24px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;margin-bottom:20px;}
-.ft-btn:hover{background:var(--accent);}
-.ft-body{display:none;}
-.ft-body.open{display:block;}
-.rn-block{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--rule-light);}
-.rn-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);font-weight:500;padding-top:2px;}
-.rn-text{font-size:14px;line-height:1.8;color:var(--ink-light);}
-.rn-h{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--ink);margin-top:20px;padding:14px 0 8px;border-top:2px solid var(--rule-light);grid-column:1/-1;}
 </style>
 </head>
 <body>
-
 <header class="masthead">
   <div class="masthead-top">
     <span id="ldate"></span>
@@ -95,7 +72,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:va
   </div>
   <div class="masthead-title">
     <h1>Lex<span>Pulse</span></h1>
-    <div class="masthead-tagline">Aktuelle Rechtsprechung für die Kanzleipraxis</div>
+    <div class="tagline">Aktuelle Rechtsprechung für die Kanzleipraxis</div>
   </div>
 </header>
 
@@ -117,73 +94,80 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:va
   <div class="nav-tab" onclick="filterTag('zugang',this)">Zugang</div>
 </nav>
 
-<div id="list-view">
 <div class="page-body">
 <main>
 <div class="section-label">Aktuelle Entscheidungen</div>
 <div class="cards-grid">
 
-<div class="card hero" data-tags="bag krankheit au beweiswert entgeltfortzahlung efzg" onclick="show(0)">
+<a class="card hero" data-tags="bag krankheit au beweiswert entgeltfortzahlung efzg" href="urteil-0.html">
   <div>
     <div class="card-meta"><span class="card-court">BAG</span><span class="card-date">08.09.2021</span><span class="card-az">5 AZR 149/21</span></div>
     <h2>Erschütterter Beweiswert: AU-Bescheinigung passgenau zur Kündigungsfrist</h2>
-    <p>Reicht ein Arbeitnehmer gleichzeitig mit seiner Eigenkündigung eine AU-Bescheinigung ein, die exakt die verbleibende Kündigungsfrist abdeckt, kann der Beweiswert erschüttert sein — die Beweislast fällt zurück auf den Arbeitnehmer.</p>
-    <span class="card-tag">ENTGELTFORTZAHLUNG · BEWEISWERT · § 3 EFZG</span>
+    <p>Reicht ein Arbeitnehmer gleichzeitig mit seiner Eigenkündigung eine AU-Bescheinigung ein, die exakt die verbleibende Kündigungsfrist abdeckt, kann der Beweiswert erschüttert sein.</p>
+    <span class="card-tag">ENTGELTFORTZAHLUNG · BEWEISWERT · § 3 EFZG</span><br>
+    <span class="read-more">Vollständige Aufarbeitung lesen →</span>
   </div>
   <div class="hero-visual">
     <div class="hero-quote">„Die zeitliche Koinzidenz zwischen bescheinigter Arbeitsunfähigkeit sowie Beginn und Ende der Kündigungsfrist begründet ernsthafte Zweifel am Bestehen der Arbeitsunfähigkeit."</div>
     <div class="hero-src">BAG, 5. Senat · Rn. 20</div>
   </div>
-</div>
+</a>
 
-<div class="card" data-tags="bag urlaub kündigung fristlos freistellung urlaubsvergütung burlg" onclick="show(1)">
+<a class="card" data-tags="bag urlaub kündigung fristlos freistellung urlaubsvergütung burlg" href="urteil-1.html">
   <div class="card-meta"><span class="card-court">BAG</span><span class="card-date">10.02.2015</span><span class="card-az">9 AZR 455/13</span></div>
   <h2>Urlaubsgewährung nach fristloser Kündigung – Vergütungszahlung als Wirksamkeitsvoraussetzung</h2>
   <p>Eine Freistellungserklärung im Kündigungsschreiben gewährt nach fristloser Kündigung nur dann wirksam Urlaub, wenn gleichzeitig Urlaubsvergütung gezahlt oder vorbehaltlos zugesagt wird.</p>
-  <span class="card-tag">URLAUBSRECHT · § 7 BURLG · EU-RICHTLINIE</span>
-</div>
+  <span class="card-tag">URLAUBSRECHT · § 7 BURLG · EU-RICHTLINIE</span><br>
+  <span class="read-more">Vollständige Aufarbeitung lesen →</span>
+</a>
 
-<div class="card" data-tags="bag kündigung krankheitsbedingt personenbedingt bem fehlzeiten kschg sgb" onclick="show(2)">
+<a class="card" data-tags="bag kündigung krankheitsbedingt personenbedingt bem fehlzeiten kschg sgb" href="urteil-2.html">
   <div class="card-meta"><span class="card-court">BAG</span><span class="card-date">Aktuell</span><span class="card-az">§ 1 KSchG · § 167 SGB IX</span></div>
   <h2>Krankheitsbedingte Kündigung: Fehlzeitdauer, BEM-Pflicht und Negativprognose</h2>
-  <p>Orientierungswerte für die Wirksamkeit personenbedingter Kündigungen: Erst ab ca. 18 Monaten Fehlzeit ohne Genesungsaussicht ist eine negative Prognose tragfähig. BEM-Versäumnis erhöht die Anforderungen.</p>
-  <span class="card-tag">PERSONENBEDINGTE KÜNDIGUNG · BEM · NEGATIVPROGNOSE</span>
-</div>
+  <p>Orientierungswerte für die Wirksamkeit personenbedingter Kündigungen: Erst ab ca. 18 Monaten Fehlzeit ohne Genesungsaussicht ist eine negative Prognose tragfähig.</p>
+  <span class="card-tag">PERSONENBEDINGTE KÜNDIGUNG · BEM · NEGATIVPROGNOSE</span><br>
+  <span class="read-more">Vollständige Aufarbeitung lesen →</span>
+</a>
 
-<div class="card" data-tags="lag kündigung fristlos arbeitszeitbetrug schwerbehinderung vertrauensbruch bgb sgb" onclick="show(3)">
+<a class="card" data-tags="lag kündigung fristlos arbeitszeitbetrug schwerbehinderung vertrauensbruch bgb sgb" href="urteil-3.html">
   <div class="card-meta"><span class="card-court">LAG Hamm</span><span class="card-date">27.01.2023</span><span class="card-az">13 Sa 1007/22</span></div>
   <h2>Fristlose Kündigung wegen Arbeitszeitbetrug – kein Schutz durch Schwerbehinderung</h2>
-  <p>Auch bei 9-jähriger Betriebszugehörigkeit und Schwerbehinderung rechtfertigt vorsätzlicher Arbeitszeitbetrug mit Vertuschungsverhalten eine fristlose Kündigung — selbst bei 10-minütigem Café-Besuch.</p>
-  <span class="card-tag">§ 626 BGB · SCHWERBEHINDERUNG · VERTUSCHUNG</span>
-</div>
+  <p>Auch bei 9-jähriger Betriebszugehörigkeit und Schwerbehinderung rechtfertigt vorsätzlicher Arbeitszeitbetrug mit Vertuschungsverhalten eine fristlose Kündigung.</p>
+  <span class="card-tag">§ 626 BGB · SCHWERBEHINDERUNG · VERTUSCHUNG</span><br>
+  <span class="read-more">Vollständige Aufarbeitung lesen →</span>
+</a>
 
-<div class="card" data-tags="bag zugang einschreiben einwurf anscheinsbeweis kündigung bgb post" onclick="show(4)">
+<a class="card" data-tags="bag zugang einschreiben einwurf anscheinsbeweis kündigung bgb post" href="urteil-4.html">
   <div class="card-meta"><span class="card-court">BAG</span><span class="card-date">30.01.2025</span><span class="card-az">2 AZR 68/24</span></div>
   <h2>Kein Anscheinsbeweis ohne Auslieferungsbeleg: Einwurf-Einschreiben reicht nicht</h2>
   <p>Einlieferungsbeleg + Sendungsstatus begründen keinen Anscheinsbeweis für den Zugang einer Kündigung. Ohne Auslieferungsbeleg bleibt der Absender beweisfällig.</p>
-  <span class="card-tag">§ 130 BGB · ZUGANG · POSTZUSTELLUNG</span>
-</div>
+  <span class="card-tag">§ 130 BGB · ZUGANG · POSTZUSTELLUNG</span><br>
+  <span class="read-more">Vollständige Aufarbeitung lesen →</span>
+</a>
 
-<div class="card" data-tags="lag krankheit urlaub langzeitkonto freistellung tarifvertrag" onclick="show(5)">
+<a class="card" data-tags="lag krankheit urlaub langzeitkonto freistellung tarifvertrag" href="urteil-5.html">
   <div class="card-meta"><span class="card-court">LAG Köln</span><span class="card-date">10.04.2025</span><span class="card-az">3 SLa 629/24</span></div>
   <h2>Erkrankung im Freistellungszeitraum beseitigt Erfüllung des Langzeitkontos nicht</h2>
-  <p>Wird ein Arbeitnehmer nach vereinbarter Freistellung zum Abbau seines Langzeitkontos arbeitsunfähig, beseitigt die nachträgliche Erkrankung die Erfüllungswirkung der Freistellung nicht rückwirkend.</p>
-  <span class="card-tag">LANGZEITKONTO · FREISTELLUNG · TV LZK</span>
-</div>
+  <p>Wird ein Arbeitnehmer nach vereinbarter Freistellung zum Abbau seines Langzeitkontos arbeitsunfähig, beseitigt die nachträgliche Erkrankung die Erfüllungswirkung nicht rückwirkend.</p>
+  <span class="card-tag">LANGZEITKONTO · FREISTELLUNG · TV LZK</span><br>
+  <span class="read-more">Vollständige Aufarbeitung lesen →</span>
+</a>
 
-<div class="card" data-tags="arbg krankheit au beweiswert entgeltfortzahlung befristung koinzidenz efzg" onclick="show(6)">
+<a class="card" data-tags="arbg krankheit au beweiswert entgeltfortzahlung befristung koinzidenz efzg" href="urteil-6.html">
   <div class="card-meta"><span class="card-court">ArbG Kassel</span><span class="card-date">27.01.2026</span><span class="card-az">9 Ca 262/25</span></div>
   <h2>Erschütterter AU-Beweiswert bei Befristungsende: Koinzidenz mit Kündigungswissen genügt</h2>
-  <p>Erfährt ein befristeter Arbeitnehmer von der Nichtverlängerung und wird bis genau zum Befristungsende krank, ist der Beweiswert der AU-Bescheinigung erschüttert — auch ohne Eigenkündigung.</p>
-  <span class="card-tag">BEFRISTUNG · BEWEISWERT · KOINZIDENZ · § 3 EFZG</span>
-</div>
+  <p>Erfährt ein befristeter Arbeitnehmer von der Nichtverlängerung und wird bis genau zum Befristungsende krank, ist der Beweiswert der AU-Bescheinigung erschüttert.</p>
+  <span class="card-tag">BEFRISTUNG · BEWEISWERT · KOINZIDENZ · § 3 EFZG</span><br>
+  <span class="read-more">Vollständige Aufarbeitung lesen →</span>
+</a>
 
-<div class="card" data-tags="arbg krankheit au beweiswert urlaub muster wiederholung efzg" onclick="show(7)">
+<a class="card" data-tags="arbg krankheit au beweiswert urlaub muster wiederholung efzg" href="urteil-7.html">
   <div class="card-meta"><span class="card-court">ArbG Heilbronn</span><span class="card-date">27.03.2026</span><span class="card-az">7 Ca 314/25</span></div>
   <h2>Wiederholtes Krankmelden nach Urlaub erschüttert Beweiswert – Arzt-Zeuge unergiebig</h2>
   <p>Der Beweiswert einer AU-Bescheinigung ist erschüttert, wenn der Arbeitnehmer mehrere Jahre in Folge nach seinem Jahresurlaub erkrankt und zuvor erfolglos eine Urlaubsverlängerung beantragt hatte.</p>
-  <span class="card-tag">BEWEISWERT · URLAUBSANSCHLUSS · MUSTER · § 286 ZPO</span>
-</div>
+  <span class="card-tag">BEWEISWERT · URLAUBSANSCHLUSS · MUSTER · § 286 ZPO</span><br>
+  <span class="read-more">Vollständige Aufarbeitung lesen →</span>
+</a>
 
 </div>
 <div id="no-results">Keine Ergebnisse für Ihre Suchanfrage.</div>
@@ -192,14 +176,14 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:va
 <aside>
 <div class="sidebar-box">
 <div class="section-label">Schnellzugriff</div>
-<div class="sitem" onclick="show(0)"><div class="stitle">AU-Bescheinigung: Beweiswert</div><div class="smeta">BAG · 5 AZR 149/21 · 2021</div></div>
-<div class="sitem" onclick="show(1)"><div class="stitle">Urlaub nach fristloser Kündigung</div><div class="smeta">BAG · 9 AZR 455/13 · 2015</div></div>
-<div class="sitem" onclick="show(2)"><div class="stitle">Krankheitsbedingte Kündigung</div><div class="smeta">BAG · § 167 SGB IX · Aktuell</div></div>
-<div class="sitem" onclick="show(3)"><div class="stitle">Arbeitszeitbetrug, Schwerbehinderung</div><div class="smeta">LAG Hamm · 13 Sa 1007/22 · 2023</div></div>
-<div class="sitem" onclick="show(4)"><div class="stitle">Einwurf-Einschreiben: Zugang</div><div class="smeta">BAG · 2 AZR 68/24 · 2025</div></div>
-<div class="sitem" onclick="show(5)"><div class="stitle">Langzeitkonto & Erkrankung</div><div class="smeta">LAG Köln · 3 SLa 629/24 · 2025</div></div>
-<div class="sitem" onclick="show(6)"><div class="stitle">AU-Beweiswert bei Befristungsende</div><div class="smeta">ArbG Kassel · 9 Ca 262/25 · 2026</div></div>
-<div class="sitem" onclick="show(7)"><div class="stitle">Krankmelden nach Urlaub – Muster</div><div class="smeta">ArbG Heilbronn · 7 Ca 314/25 · 2026</div></div>
+<a class="sitem" href="urteil-0.html"><div class="stitle">AU-Bescheinigung: Beweiswert</div><div class="smeta">BAG · 5 AZR 149/21 · 2021</div></a>
+<a class="sitem" href="urteil-1.html"><div class="stitle">Urlaub nach fristloser Kündigung</div><div class="smeta">BAG · 9 AZR 455/13 · 2015</div></a>
+<a class="sitem" href="urteil-2.html"><div class="stitle">Krankheitsbedingte Kündigung</div><div class="smeta">BAG · § 167 SGB IX · Aktuell</div></a>
+<a class="sitem" href="urteil-3.html"><div class="stitle">Arbeitszeitbetrug, Schwerbehinderung</div><div class="smeta">LAG Hamm · 13 Sa 1007/22 · 2023</div></a>
+<a class="sitem" href="urteil-4.html"><div class="stitle">Einwurf-Einschreiben: Zugang</div><div class="smeta">BAG · 2 AZR 68/24 · 2025</div></a>
+<a class="sitem" href="urteil-5.html"><div class="stitle">Langzeitkonto &amp; Erkrankung</div><div class="smeta">LAG Köln · 3 SLa 629/24 · 2025</div></a>
+<a class="sitem" href="urteil-6.html"><div class="stitle">AU-Beweiswert bei Befristungsende</div><div class="smeta">ArbG Kassel · 9 Ca 262/25 · 2026</div></a>
+<a class="sitem" href="urteil-7.html"><div class="stitle">Krankmelden nach Urlaub – Muster</div><div class="smeta">ArbG Heilbronn · 7 Ca 314/25 · 2026</div></a>
 </div>
 <div class="glossar-box">
 <div class="section-label" style="color:var(--accent)">Relevante Normen</div>
@@ -213,138 +197,36 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:va
 </div>
 </aside>
 </div>
-</div>
-
-<!-- DETAIL VIEW -->
-<div id="detail-view">
-  <button class="back-btn" onclick="goBack()">← Zurück zur Übersicht</button>
-  <div id="dc"></div>
-</div>
 
 <script>
-var D = [
-{id:0,g:"BAG – 5. Senat",d:"08.09.2021",az:"5 AZR 149/21",
-leitsatz:"Wird ein Arbeitnehmer, der sein Arbeitsverhältnis kündigt, am Tag der Kündigung arbeitsunfähig krankgeschrieben, kann dies den Beweiswert der Arbeitsunfähigkeitsbescheinigung insbesondere dann erschüttern, wenn die bescheinigte Arbeitsunfähigkeit passgenau die Dauer der Kündigungsfrist umfasst.",
-titel:"Erschütterter Beweiswert: AU-Bescheinigung passgenau zur Kündigungsfrist",
-tb:"Die Klägerin war bei der Beklagten als kaufmännische Angestellte beschäftigt. Am 8. Februar 2019 reichte sie gleichzeitig ihre Eigenkündigung zum 22. Februar 2019 und eine ärztliche Erstbescheinigung vom selben Tag ein. Die bescheinigte Arbeitsunfähigkeit endete exakt am letzten Tag des Arbeitsverhältnisses — sie deckte punktgenau die verbleibende Kündigungsfrist von 14 Tagen ab. Die Beklagte verweigerte die Entgeltfortzahlung.",
-eg:"Das BAG gab der Revision der Beklagten statt. Die ordnungsgemäß ausgestellte AU-Bescheinigung hat nach §§ 5, 7 EFZG einen hohen gesetzlich normierten Beweiswert, begründet jedoch keine gesetzliche Vermutung im Sinne des § 292 ZPO.\n\nSolche Zweifel können sich auch aus der AU-Bescheinigung selbst ergeben. Die zeitliche Koinzidenz zwischen Kündigung, Beginn der Arbeitsunfähigkeit und Ablauf der Kündigungsfrist war für sich allein geeignet, den Beweiswert zu erschüttern.\n\nNach Erschütterung kehrt die volle Darlegungs- und Beweislast zur Klägerin zurück. Sie muss konkret darlegen, welche Erkrankungen vorlagen, welche Einschränkungen bestanden und welche Maßnahmen ärztlich verordnet wurden. Der pauschale Vortrag zu einem „psychosomatischen Hintergrund" genügte nicht.",
-vt:[{h:"Tatbestand"},{rn:"1",t:"Die Parteien streiten in der Revision noch über Entgeltfortzahlung im Krankheitsfall für die Zeit vom 8. bis zum 22. Februar 2019."},{rn:"3",t:"Am 8. Februar 2019 reichte die Klägerin zugleich mit ihrer Kündigung vom 8. Februar 2019 zum 22. Februar 2019 eine auf den 8. Februar 2019 datierte ärztliche Erstbescheinigung über eine voraussichtlich vom 8. bis zum 22. Februar 2019 bestehende Arbeitsunfähigkeit ein."},{h:"Entscheidungsgründe"},{rn:"13",t:"Der ordnungsgemäß ausgestellten Arbeitsunfähigkeitsbescheinigung kommt aufgrund der normativen Vorgaben im Entgeltfortzahlungsgesetz ein hoher Beweiswert zu. Der Tatrichter kann normalerweise den Beweis einer krankheitsbedingten Arbeitsunfähigkeit als erbracht ansehen, wenn der Arbeitnehmer im Rechtsstreit eine Arbeitsunfähigkeitsbescheinigung vorlegt."},{rn:"14",t:"Die ärztliche Arbeitsunfähigkeitsbescheinigung begründet jedoch keine gesetzliche Vermutung einer tatsächlich bestehenden Arbeitsunfähigkeit iSd. § 292 ZPO. Aufgrund des normativ vorgegebenen hohen Beweiswerts genügt ein bloßes Bestreiten der Arbeitsunfähigkeit mit Nichtwissen durch den Arbeitgeber nicht. Vielmehr kann der Arbeitgeber den Beweiswert nur dadurch erschüttern, dass er tatsächliche Umstände darlegt und im Bestreitensfall beweist, die Zweifel an der Erkrankung des Arbeitnehmers ergeben."},{rn:"19",t:"Auf der Grundlage des festgestellten Sachverhalts ist davon auszugehen, dass der Beweiswert der vorgelegten Arbeitsunfähigkeitsbescheinigung erschüttert ist. Aufgrund der zeitlichen Koinzidenz zwischen bescheinigter Arbeitsunfähigkeit sowie Beginn und Ende der Kündigungsfrist bestehen ernsthafte Zweifel am Bestehen der Arbeitsunfähigkeit."},{rn:"21",t:"Die Klägerin hat lediglich pauschal ausgeführt, es habe ein psychosomatischer Hintergrund bestanden. Sie hat aber keine näheren Angaben zur Intensität der von ihr geschilderten Schlafstörungen oder zur Art und vor allem Schwere der weiteren gesundheitlichen Beeinträchtigungen gemacht. Es fehlte damit an substantiiertem Vortrag zu den während des streitgegenständlichen Zeitraums konkret bestehenden gesundheitlichen Beschwerden."}]},
-{id:1,g:"BAG – 9. Senat",d:"10.02.2015",az:"9 AZR 455/13",
-leitsatz:"Ein Arbeitgeber gewährt durch eine Freistellungserklärung für den Zeitraum nach dem Zugang einer fristlosen Kündigung nur dann wirksam Urlaub, wenn er dem Arbeitnehmer die Urlaubsvergütung vor Antritt des Urlaubs zahlt oder vorbehaltlos zusagt.",
-titel:"Urlaubsgewährung nach fristloser Kündigung – Vergütungszahlung als Wirksamkeitsvoraussetzung",
-tb:"Der Kläger war seit 1987 bei der Beklagten beschäftigt. Diese kündigte sein Arbeitsverhältnis im Mai 2011 außerordentlich fristlos und erklärte zugleich eine Freistellung unter Anrechnung sämtlicher Urlaubs- und Überstundenansprüche. Im Gütetermin einigten sich die Parteien auf eine Beendigung zum 30.06.2011 mit bezahlter Freistellung. Der Kläger verlangte weitere Urlaubsabgeltung, weil der Urlaub durch die bedingte Freistellungserklärung nicht wirksam gewährt worden sei.",
-eg:"Der 9. Senat modifizierte seine bisherige Rechtsprechung: Bei einer bedingten Freistellung nach fristloser Kündigung ist für den Arbeitnehmer unklar, ob er überhaupt eine Arbeitspflicht hat, von der er befreit werden kann.\n\nZudem gebietet Art. 7 RL 2003/88/EG, dass Urlaubsvergütung dem Arbeitnehmer bei Urlaubsantritt sicher sein muss. Es genügt nicht, wenn er erst nach Abschluss des Kündigungsschutzprozesses Vergütung erhält.\n\nIm konkreten Fall war der Urlaubsanspruch aber durch den Prozessvergleich erfüllt: Die Parteien hatten sich auf bezahlte Freistellung bis zum 30.06.2011 geeinigt, und die umfassende Erledigungsklausel erfasste auch den Urlaubsanspruch.",
-vt:[{h:"Tatbestand"},{rn:"5",t:"Mit Schreiben vom 19. Mai 2011 kündigte die Beklagte das Arbeitsverhältnis außerordentlich mit sofortiger Wirkung, hilfsweise fristgemäß zum 31. Dezember 2011. Im Falle der Wirksamkeit der hilfsweise fristgemäßen Kündigung wurden sämtliche Urlaubs- und Überstundenansprüche angerechnet."},{h:"Entscheidungsgründe"},{rn:"18",t:"Ein Arbeitgeber gewährt durch die Freistellungserklärung in einem Kündigungsschreiben nur dann wirksam Urlaub, wenn er dem Arbeitnehmer die Urlaubsvergütung vor Antritt des Urlaubs zahlt oder vorbehaltlos zusagt."},{rn:"20",t:"Stellt der Arbeitgeber den Arbeitnehmer für den Fall der Unwirksamkeit der fristlosen Kündigung für die Dauer der Kündigungsfrist frei, steht in diesem Zeitraum regelmäßig nicht rechtskräftig fest, ob die außerordentliche Kündigung wirksam ist. Da nur im Falle der Unwirksamkeit der fristlosen Kündigung eine Arbeitspflicht besteht, von der der Arbeitnehmer befreit werden kann, ist mit Zugang der bedingten Freistellungserklärung nicht klar, ob eine Verpflichtung zur Arbeitsleistung besteht."},{rn:"23",t:"Aus dem Anspruch auf bezahlten Erholungsurlaub folgt, dass dem Arbeitnehmer im Zeitpunkt der Inanspruchnahme des Urlaubs ein Anspruch auf Vergütung sicher sein muss. Dazu genügt es nicht, wenn ihm zu irgendeinem späteren Zeitpunkt nach der rechtskräftigen Entscheidung über die Kündigungsschutzklage ein Anspruch auf Urlaubsvergütung zuerkannt wird."}]},
-{id:2,g:"Recherche / BAG-Rspr.",d:"Aktuell",az:"§ 1 KSchG · § 167 SGB IX",
-leitsatz:"Eine personenbedingte Kündigung wegen Krankheit ist nur sozial gerechtfertigt, wenn eine negative Gesundheitsprognose vorliegt, betriebliche Interessen erheblich beeinträchtigt sind und die Interessenabwägung zugunsten des Arbeitgebers ausfällt. Als Richtwert gilt eine Fehlzeit von mindestens ca. 18 Monaten ohne absehbare Besserung.",
-titel:"Krankheitsbedingte Kündigung: Fehlzeitdauer, BEM-Pflicht und Negativprognose",
-tb:"Diese Zusammenfassung stellt die wesentlichen Grundsätze zur krankheitsbedingten Kündigung nach der ständigen BAG-Rechtsprechung dar. Konkret wurde die Fehlzeitberechnung für eine Mitarbeiterin erstellt, die vom 06.05.2024 bis zum 15.12.2025 durchgehend krankgeschrieben war (589 Kalendertage = 84 Wochen + 1 Tag).",
-eg:"Das BEM nach § 167 Abs. 2 SGB IX ist vom Arbeitgeber anzubieten, wenn ein Beschäftigter innerhalb von 12 Monaten mehr als 6 Wochen arbeitsunfähig war. Ein fehlendes BEM erhöht die Anforderungen im Kündigungsschutzprozess.\n\nDie personenbedingte Kündigung wegen Krankheit prüft die Rechtsprechung in drei Stufen: (1) Negative Gesundheitsprognose, (2) Erhebliche Beeinträchtigung betrieblicher Interessen, (3) Interessenabwägung.\n\nRichtwerte: Sechs Monate Fehlzeit reichen nicht. Erst ab ca. 18 Monaten Dauererkrankung ohne Genesungsaussicht in den nächsten 24 Monaten kann eine Negativprognose bejaht werden. Bei Kurzerkrankungen gilt erst eine Fehlzeitenquote von ca. 25–40% als kritisch.\n\nIm konkreten Fall (06.05.2024–15.12.2025 = 589 Tage) überschreitet die Fehlzeit die 18-Monats-Schwelle deutlich.",
-vt:[{h:"BEM – § 167 Abs. 2 SGB IX"},{rn:"–",t:"Ein BEM ist vom Arbeitgeber anzubieten, wenn eine Arbeitnehmerin innerhalb von 12 Monaten länger als sechs Wochen krankheitsbedingt arbeitsunfähig war. Dabei zählt jede krankheitsbedingte Fehlzeit – egal ob ununterbrochen oder wiederholt. Die Durchführung setzt die Zustimmung der betroffenen Person voraus."},{h:"Drei-Stufen-Prüfung"},{rn:"–",t:"Stufe 1 – Negative Gesundheitsprognose: Zum Zeitpunkt des Kündigungszugangs muss anhand objektiver Tatsachen zu erwarten sein, dass der Arbeitnehmer auch in Zukunft in erheblichem Umfang erkranken wird."},{rn:"–",t:"Stufe 2 – Erhebliche Beeinträchtigung betrieblicher Interessen: Lohnfortzahlungskosten oder betriebliche Ablaufstörungen. Die Fehlzeiten müssen zu einer nicht mehr hinnehmbaren Beeinträchtigung führen."},{rn:"–",t:"Stufe 3 – Interessenabwägung: Abwägung zwischen betrieblicher Belastung und individuellem Schutzinteresse. Zu berücksichtigen: Betriebszugehörigkeit, Lebensalter, Erkrankungsursachen, bisheriger Verlauf, Alternativbeschäftigung."},{h:"Fehlzeitberechnung 06.05.2024–15.12.2025"},{rn:"–",t:"Die Mitarbeiterin war vom 6. Mai 2024 bis zum 15. Dezember 2025 durchgehend krankgeschrieben = 589 Kalendertage = 84 Wochen + 1 Tag. Die Fehlzeit überschreitet die relevante 18-Monats-Schwelle deutlich."}]},
-{id:3,g:"LAG Hamm – 13. Kammer",d:"27.01.2023",az:"13 Sa 1007/22",
-leitsatz:"Vorsätzlicher Arbeitszeitbetrug durch Missbrauch eines elektronischen Zeiterfassungssystems stellt auch bei kurzem Verstoß einen wichtigen Grund zur außerordentlichen Kündigung dar, wenn der Arbeitnehmer das Vergehen im Personalgespräch beharrlich leugnet. Das hartnäckige Nachtatverhalten kann die Vertrauensgrundlage irreparabel zerstören — auch bei langjähriger Betriebszugehörigkeit und Schwerbehinderung.",
-titel:"Fristlose Kündigung wegen Arbeitszeitbetrug – kein Schutz durch Schwerbehinderung",
-tb:"Die Klägerin, 62 Jahre alt, mit einem GdB von 100% schwerbehindert, war seit September 2013 als Raumpflegerin beschäftigt. Am 08.10.2021 verließ sie ihren Arbeitsplatz für mindestens 10 Minuten, ohne sich im Zeiterfassungssystem auszuloggen, um im Café Kaffee zu trinken. Ihren Kolleginnen gegenüber hatte sie angekündigt, in den Keller zu gehen. Als der Beklagte sie konfrontierte, leugnete die Klägerin die Tat zunächst mehrfach und räumte sie erst ein, nachdem Beweisfotos angekündigt wurden.",
-eg:"Das LAG Hamm bestätigte die Wirksamkeit der fristlosen Kündigung. Vorsätzlicher Missbrauch eines Arbeitszeiterfassungssystems ist geeignet, einen wichtigen Grund nach § 626 BGB zu begründen. Es kommt nicht auf die Dauer oder Häufigkeit an, sondern auf den Vertrauensbruch.\n\nVorsatz: Die Klägerin handelte vorsätzlich. Spätestens beim Leugnen gegenüber dem Arbeitgeber handelte sie mit Täuschungsabsicht.\n\nAbmahnung war entbehrlich: Durch das systematische Vertuschungsverhalten hat die Klägerin die Vertrauensgrundlage irreparabel zerstört. Auch die 9-jährige Betriebszugehörigkeit, das Lebensalter und die Schwerbehinderung führen zu keiner anderen Interessenabwägung.",
-vt:[{h:"Tatbestand"},{rn:"4",t:"Die am 17.03.1959 geborene, verheiratete Klägerin ist bei dem Beklagten seit dem 01.09.2013 vollzeitig als Raumpflegerin beschäftigt. Die Klägerin ist mit einem GdB von 100 % schwerbehindert."},{rn:"6",t:"Am 08.10.2021 loggte sich die Klägerin bei Aufnahme ihrer Tätigkeit um 07:20 Uhr über das Zeiterfassungssystem ein und bei Beendigung um 11:05 Uhr wieder aus. Gegen 08.30 Uhr besuchte sie für mindestens 10 Minuten das gegenüberliegende Café. Unmittelbar vor der Arbeitsunterbrechung hatte die Klägerin Arbeitskolleginnen gegenüber erklärt, dass sie in den Keller gehe."},{rn:"7",t:"Nachdem die Klägerin zurückgekehrt war, konfrontierte der Beklagte sie mit seinen Beobachtungen. Den Vorwurf des Arbeitszeitbetruges wies die Klägerin zurück. Erst nachdem der Beklagte ankündigte, Beweisfotos auf seinem Mobiltelefon zeigen zu wollen, gab diese zu, die B verlassen zu haben."},{h:"Entscheidungsgründe"},{rn:"50",t:"Der vorsätzliche Verstoß eines Arbeitnehmers gegen seine Verpflichtung, die abgeleistete Arbeitszeit korrekt zu dokumentieren, ist an sich geeignet, einen wichtigen Grund zur außerordentlichen Kündigung iSv. § 626 Abs. 1 BGB darzustellen. Dabei kommt es nicht entscheidend auf die strafrechtliche Würdigung an, sondern auf den schweren Vertrauensbruch."},{rn:"51",t:"Entscheidend sind weder die Dauer des Arbeitszeitbetruges, noch die Häufigkeit. Ein wichtiger Grund iSv § 626 Abs. 1 BGB kann grundsätzlich auch vorliegen, wenn es sich nur um einen einmaligen Vorfall gehandelt hat, der nur zu einem geringen wirtschaftlichen Schaden geführt hat. Denn entscheidend ist der Vertrauensverlust."},{rn:"58",t:"Angesichts der Schwere der Pflichtverletzung war es dem Beklagten nicht zumutbar, die Klägerin auch nur bis zum Ablauf der ordentlichen Kündigungsfrist weiter zu beschäftigen. Auch die unbeanstandete Betriebszugehörigkeit von neun Jahren, das Lebensalter der Klägerin sowie ihre Schwerbehinderung führen angesichts des schweren Vertrauensbruchs nicht zu einer Interessenabwägung zu ihren Gunsten."}]},
-{id:4,g:"BAG – 2. Senat",d:"30.01.2025",az:"2 AZR 68/24",
-leitsatz:"Die Vorlage des Einlieferungsbelegs eines Einwurf-Einschreibens zusammen mit einem Ausdruck des Sendungsstatus begründet keinen Anscheinsbeweis für den Zugang der Sendung beim Empfänger. Ohne Vorlage einer Reproduktion des Auslieferungsbelegs bleibt der Absender für den Zugang einer Kündigung beweisfällig.",
-titel:"Kein Anscheinsbeweis ohne Auslieferungsbeleg: Einwurf-Einschreiben reicht nicht",
-tb:"Die Klägerin arbeitete seit Mai 2021 bei der Beklagten. Die Beklagte behauptete, am 26.07.2022 ein Kündigungsschreiben als Einwurf-Einschreiben versandt zu haben. Als Nachweis legte sie den Einlieferungsbeleg sowie einen Sendungsstatus-Ausdruck vor. Den Auslieferungsbeleg konnte sie nicht mehr vorlegen (Aufbewahrungsfrist 15 Monate abgelaufen). Die Klägerin bestritt den Zugang.",
-eg:"Das BAG wies die Revision zurück. Der Anscheinsbeweis greift nur bei typischen Geschehensabläufen mit sehr hoher Wahrscheinlichkeit ein.\n\nDer BGH hatte einen Anscheinsbeweis anerkannt, wenn Einlieferungsbeleg und Auslieferungsbeleg (mit Peel-off-Label und Unterschrift des Zustellers) vorgelegt werden. Vorliegend fehlte jedoch der Auslieferungsbeleg.\n\nWeder Einlieferungsbeleg noch Sendungsstatus genügen: Der Sendungsstatus enthält keine Angaben über den Zusteller, die Zustellungsart oder die Uhrzeit. Würde er genügen, hätte der Empfänger praktisch keine Möglichkeit, den Anscheinsbeweis zu erschüttern.\n\nPraxishinweis: Den Auslieferungsbeleg unbedingt innerhalb von 15 Monaten anfordern, sobald der Zugang bestritten wird.",
-vt:[{h:"Tatbestand"},{rn:"3",t:"Das zuständige Regierungspräsidium erteilte der Beklagten mit Bescheid vom 25. Juli 2022 die Zustimmung zur Kündigung. Die Beklagte berief sich darauf, sie habe das Arbeitsverhältnis mit Schreiben vom 26. Juli 2022 ein weiteres Mal gekündigt. Die Klägerin hat den Zugang dieses Kündigungsschreibens bestritten."},{h:"Entscheidungsgründe"},{rn:"10",t:"Nach der ständigen Rechtsprechung geht eine verkörperte Willenserklärung unter Abwesenden iSv. § 130 Abs. 1 Satz 1 BGB zu, sobald sie in verkehrsüblicher Weise in die tatsächliche Verfügungsgewalt des Empfängers gelangt ist und für diesen unter gewöhnlichen Verhältnissen die Möglichkeit besteht, von ihr Kenntnis zu nehmen."},{rn:"15",t:"Der von der Beklagten vorgelegte Einlieferungsbeleg eines Einwurf-Einschreibens zusammen mit dem Sendungsstatus genügt nicht für einen Beweis des ersten Anscheins, dass das Schreiben der Klägerin tatsächlich zugegangen ist."},{rn:"20",t:"Der Ausdruck des Sendungsstatus bietet keine ausreichende Gewähr für einen Zugang. Es lässt sich weder feststellen, wer die Sendung zugestellt hat, noch gibt es ausreichende Anhaltspunkte dafür, dass das Verfahren der Deutschen Post AG tatsächlich eingehalten wurde. Der Sendungsstatus ist kein Ersatz für den Auslieferungsbeleg."},{rn:"21",t:"Würde ein solcher Sendungsstatus für einen Anscheinsbeweis genügen, hätte der vermeintliche Empfänger der Sendung praktisch keine Möglichkeit, ihn zu erschüttern oder gar einen Gegenbeweis anzutreten. Demgegenüber hatte die Beklagte als Absenderin die Möglichkeit, die Reproduktion eines Auslieferungsbelegs anzufordern."}]},
-{id:5,g:"LAG Köln – 3. Senat",d:"10.04.2025",az:"3 SLa 629/24",
-leitsatz:"Ein Anspruch auf Arbeitszeitausgleich aus einem tariflichen Langzeitkonto wird bereits durch die Freistellung von der Arbeitspflicht erfüllt. Eine nachträglich eintretende krankheitsbedingte Arbeitsunfähigkeit im Freistellungszeitraum macht die Erfüllung des Ausgleichsanspruchs nicht hinfällig, sofern der Tarifvertrag nicht ausdrücklich die Verschaffung einer zu Erholungszwecken nutzbaren Zeit sicherstellen will.",
-titel:"Erkrankung im Freistellungszeitraum beseitigt Erfüllung des Langzeitkontos nicht",
-tb:"Der Kläger war seit 1984 beschäftigt. Nach Abschluss eines Aufhebungsvertrags zum 30.09.2023 mit einem Langzeitkontoguthaben von 31 Tagen wurde er für den Zeitraum 18.08.2023 bis 29.09.2023 freigestellt. Ab dem 04.08.2023 war er bis über das Ende des Arbeitsverhältnisses hinaus arbeitsunfähig erkrankt. Er begehrte die Auszahlung der 31 Tage als Störfall nach § 7 lit. b) TV LZK.",
-eg:"Das LAG Köln wies die Berufung zurück. Nach ständiger BAG-Rechtsprechung wird ein Anspruch auf Arbeitszeitausgleich bereits durch die Freistellung von der Arbeitspflicht erfüllt. Eine nachträglich eintretende Arbeitsunfähigkeit macht die Erfüllung nicht hinfällig.\n\nEtwas anderes gilt nur dann, wenn der Tarifvertrag ausdrücklich die Verschaffung einer zu Erholungszwecken nutzbaren Zeit sicherstellen will. Ein solcher Wille ist dem TV LZK nicht zu entnehmen.\n\n§ 7 lit. b) TV LZK betrifft Störungen beim Abbau des Langzeitguthabens, d.h. wenn eine Freistellung nicht gewährt werden kann — nicht die nachträgliche Erkrankung nach erfolgter Freistellung.",
-vt:[{h:"Tatbestand"},{rn:"36",t:"Am 20.06.2023 schlossen die Parteien einen Aufhebungsvertrag mit Wirkung zum 30.09.2023. Zum Zeitpunkt des Vertragsabschlusses bestand im Langzeitkonto des Klägers ein Guthaben von 31 Tagen. Zum Ausgleich dieses Guthabens sollte der Kläger im Zeitraum vom 18.08.2023 bis 29.09.2023 freigestellt werden."},{rn:"37",t:"Vom 04.08.2023 bis über das Ende des Arbeitsverhältnisses am 30.09.2023 hinaus war der Kläger arbeitsunfähig erkrankt. Er begehrte die Auszahlung von 31 Tagen aus dem Langzeitkonto mit der Begründung, er habe wegen seiner Erkrankung aus persönlichen Gründen die eingestellten Stunden nicht abbauen können."},{h:"Entscheidungsgründe"},{rn:"57",t:"Nach der ständigen Rechtsprechung des Bundesarbeitsgerichts wird ein Anspruch auf Arbeitszeitausgleich bereits durch die Freistellung von der Arbeitspflicht erfüllt. Eine nachträglich eintretende krankheitsbedingte Arbeitsunfähigkeit im Freistellungszeitraum macht die Erfüllung des Ausgleichsanspruchs nicht hinfällig. Demnach trägt grundsätzlich der Arbeitnehmer das Risiko, die durch Arbeitsbefreiung gewonnene Freizeit auch tatsächlich nach seinen Vorstellungen nutzen zu können."},{rn:"59",t:"§ 7 lit. b) TV LZK bestimmt, dass eine Auszahlung von Langzeitguthaben ausnahmsweise bei Beendigung des Arbeitsverhältnisses erfolgt, wenn das Guthaben aus persönlichen oder betrieblichen Gründen nicht abgebaut werden konnte. § 7 TV LZK betrifft seinem ausdrücklichen Wortlaut nach somit eine Störung beim Abbau des Langzeitguthabens, d.h. wenn eine Freistellung nicht oder nicht vollständig gewährt werden kann. Eine Regelung, nach der der Arbeitgeber bei erfolgter Freistellung das Risiko der Nutzungsmöglichkeit zu tragen hätte, enthält § 7 TV LZK nicht."}]},
-{id:6,g:"ArbG Kassel – 9. Kammer",d:"27.01.2026",az:"9 Ca 262/25",
-leitsatz:"Der Beweiswert einer Arbeitsunfähigkeitsbescheinigung kann auch dann erschüttert sein, wenn der Arbeitnehmer zum Zeitpunkt der Ausstellung damit rechnen musste, dass das Arbeitsverhältnis in Kürze enden werde. Dies gilt auch bei Kenntnis von der Nichtverlängerung einer Befristungsabrede. Nicht entscheidend ist, ob eine oder mehrere Bescheinigungen für die Dauer bis zum Befristungsende vorgelegt werden.",
-titel:"Erschütterter AU-Beweiswert bei Befristungsende: Koinzidenz mit Kündigungswissen genügt",
-tb:"Der befristet beschäftigte Kläger erfuhr am 04.06.2025 im Rahmen einer Betriebsversammlung, dass sein Einsatz bei der Entleiherin nicht verlängert werde. Ab dem 10.06.2025 meldete er sich durchgehend bis zum Befristungsende am 31.07.2025 krank (mit Urlaubsunterbrechung). Für Teile des Zeitraums lagen nur elektronische AU-Daten ohne physische Unterschrift vor. Die Arbeitgeberin verweigerte die Entgeltfortzahlung.",
-eg:"Das ArbG Kassel wies die Klage ab. Der Beweiswert kann auch bei Kenntnis von der Nichtverlängerung einer Befristung erschüttert sein — nicht nur bei Eigenkündigungen. Für den Beweiswert ist nicht entscheidend, ob eine oder mehrere Bescheinigungen vorgelegt werden.\n\nZur elektronischen AU: Der Papierbescheinigung kommt grundsätzlich derselbe Beweiswert zu wie der herkömmlichen Bescheinigung. Den elektronisch abrufbaren Daten kommt dagegen nur ein geringerer Beweiswert zu.\n\nNach Erschütterung muss der Kläger konkret darlegen, welche Erkrankungen vorlagen. Allgemeine Symptombeschreibungen und ICD-10-Codes reichen nicht aus.",
-vt:[{h:"Tatbestand"},{rn:"–",t:"Der befristet beschäftigte Kläger meldete sich ab dem 10.06.2025 bis zum Befristungsende am 31.07.2025 durchgehend krank. Am 04.06.2025 hatte eine Betriebsversammlung stattgefunden, in der die Nichtverlängerung der Befristung mitgeteilt wurde."},{h:"Entscheidungsgründe"},{rn:"–",t:"Der Beweiswert einer Arbeitsunfähigkeitsbescheinigung kann auch dann erschüttert sein, wenn der Arbeitnehmer zum Zeitpunkt der Ausstellung damit rechnen musste, dass das Arbeitsverhältnis in Kürze enden werde. Dies gilt auch wenn der Arbeitgeber erkennen lässt, ein befristetes Arbeitsverhältnis nicht verlängern zu wollen (vgl. BAG 13.12.2023 – 5 AZR 137/23)."},{rn:"–",t:"Für den Beweiswert ist nicht entscheidend, ob für die Dauer bis zum Befristungsende eine oder mehrere Bescheinigungen vorgelegt werden. Die ernsthaften Zweifel gründen darin, dass der Arbeitnehmer zu einem Zeitpunkt, zu dem feststeht, dass das Arbeitsverhältnis enden soll, arbeitsunfähig wird und bis zum Ablauf bleibt."},{rn:"–",t:"Zur elektronischen AU-Bescheinigung: Der dem Arbeitnehmer ausgehändigten Papierbescheinigung kommt grundsätzlich derselbe Beweiswert zu. Den elektronisch abrufbaren Daten kommt dagegen nur ein geringerer Beweiswert zu."},{rn:"–",t:"Nach Erschütterung des Beweiswerts war es Sache des Klägers, konkret darzulegen, dass er in den streitigen Zeiträumen arbeitsunfähig krank war. Unzureichend ist die bloße Wiedergabe von ICD-10-Codes. Es bedarf der detaillierten Beschreibung der krankheitsbedingten Einschränkungen im Hinblick auf die vertraglich geschuldeten Tätigkeiten. Dieser Darlegungslast ist der Kläger nicht ausreichend nachgekommen."}]},
-{id:7,g:"ArbG Heilbronn – 7. Kammer",d:"27.03.2026",az:"7 Ca 314/25",
-leitsatz:"Der Beweiswert einer Arbeitsunfähigkeitsbescheinigung ist auch dann erschüttert, wenn der Arbeitnehmer mehrere Jahre in Folge jeweils im Anschluss an seinen Jahresurlaub eine Woche lang arbeitsunfähig erkrankt und er zuvor versucht hat, die Verlängerung seines Urlaubs für den späteren Arbeitsunfähigkeitszeitraum zu erwirken.",
-titel:"Wiederholtes Krankmelden nach Urlaub erschüttert Beweiswert – Arzt-Zeuge unergiebig",
-tb:"Der Kläger befand sich vom 28.07.2025 bis 15.08.2025 im Urlaub. Eine beantragte Urlaubsverlängerung für den Zeitraum 18.–22.08.2025 wurde abgelehnt. Am Morgen des 18.08.2025 meldete er sich für genau diesen Zeitraum arbeitsunfähig krank. Im Jahr 2024 hatte sich exakt derselbe Ablauf ereignet. Das Gericht vernahm den behandelnden Hausarzt als Zeuge.",
-eg:"Das ArbG Heilbronn wies die Klage ab. Die zeitliche Koinzidenz zwischen abgelehnter Urlaubsverlängerung und nachfolgender Krankmeldung für exakt denselben Zeitraum — kombiniert mit der Wiederholung des Musters im Vorjahr — genügte zur Erschütterung des Beweiswerts.\n\nNach Erschütterung blieb der Kläger beweisfällig: Die Zeugenaussage des Hausarztes war unergiebig. Der Arzt konnte sich nicht mehr an die konkrete Behandlung erinnern und konnte nicht einmal sagen, ob er den Kläger persönlich untersucht oder nur telefonisch eine AU-Bescheinigung ausgestellt hatte.\n\nMangels Anbeweises war auch eine Parteivernehmung des Klägers nicht durchzuführen.",
-vt:[{h:"Tatbestand"},{rn:"–",t:"Im Jahr 2024 befand sich der Kläger im Urlaub vom 01.08.2024 bis 23.08.2024. Der nächste Arbeitseinsatz war für den 26.08.2024 vorgesehen. Der Kläger meldete sich für den Zeitraum vom 26.08.2024 bis 30.08.2024 arbeitsunfähig krank."},{rn:"–",t:"Im Jahr 2025 befand sich der Kläger vom 28.07.2025 bis 15.08.2025 im Urlaub. Ab 06.08.2025 bat er telefonisch um eine Verlängerung für den Zeitraum 18.–22.08.2025 — die Verlängerung wurde abgelehnt. Am Morgen des 18.08.2025 meldete er sich für genau diesen Zeitraum arbeitsunfähig krank."},{h:"Entscheidungsgründe"},{rn:"–",t:"Es liegen unstreitige Umstände vor, die Zweifel an der Erkrankung des Arbeitnehmers ergeben: Der Kläger hat mehrmals erfolglos versucht, eine Verlängerung seines Urlaubs für den 18.–22.08.2025 zu erwirken. Dies entspricht genau dem Zeitraum der streitgegenständlichen Arbeitsunfähigkeit. Hinzu kommt, dass sich der gleiche Ablauf im Jahr 2024 wiederholt hat."},{rn:"–",t:"Nach dem Ergebnis der Beweisaufnahme ist das Gericht nicht von der Richtigkeit der Behauptung des Klägers überzeugt. Die Zeugenaussage des Hausarztes Dr. E. war unergiebig. Der Zeuge hat mehrmals ausgesagt, dass er sich an die konkrete Behandlung des Klägers nicht mehr erinnern könne. Er konnte nicht einmal sagen, ob er den Kläger persönlich untersucht habe oder nur auf seinen Anruf hin eine Arbeitsunfähigkeitsbescheinigung ausgestellt habe."},{rn:"–",t:"Dem Antrag auf Einholung eines Sachverständigengutachtens war mangels Vorhandenseins von Anknüpfungstatsachen nicht nachzugehen. Der Parteivernehmung war mangels Anbeweises nicht nachzugehen."}]}
-];
-
-function show(id) {
-  var u = D[id];
-  var vt = u.vt.map(function(x) {
-    if (x.h) return '<div class="rn-h">'+x.h+'</div>';
-    return '<div class="rn-block"><div class="rn-num">Rn.&nbsp;'+x.rn+'</div><div class="rn-text">'+x.t+'</div></div>';
-  }).join('');
-  var html = '<div class="detail-header">'
-    +'<div class="card-meta"><span class="card-court">'+u.g+'</span><span class="card-date">'+u.d+'</span><span class="card-az">'+u.az+'</span></div>'
-    +'<h1>'+u.titel+'</h1>'
-    +'<div class="leitsatz-box"><strong>Leitsatz</strong>'+u.leitsatz+'</div>'
-    +'</div>'
-    +'<div class="detail-body">'
-    +'<div class="sbox"><h3>Tatbestand</h3>'+u.tb.split('\n\n').map(function(p){return '<p>'+p+'</p>';}).join('')+'</div>'
-    +'<div class="sbox"><h3>Entscheidungsgründe</h3>'+u.eg.split('\n\n').map(function(p){return '<p>'+p+'</p>';}).join('')+'</div>'
-    +'</div>'
-    +'<div class="ft-section">'
-    +'<button class="ft-btn" onclick="toggleFT(this)">▼ Vollständiges Urteil anzeigen (mit Randnummern)</button>'
-    +'<div class="ft-body">'+vt+'</div>'
-    +'</div>';
-  document.getElementById('dc').innerHTML = html;
-  document.getElementById('list-view').style.display = 'none';
-  document.getElementById('detail-view').style.display = 'block';
-  window.scrollTo(0,0);
-}
-
-function toggleFT(btn) {
-  var b = btn.nextElementSibling;
-  b.classList.toggle('open');
-  btn.textContent = b.classList.contains('open') ? '▲ Volltext ausblenden' : '▼ Vollständiges Urteil anzeigen (mit Randnummern)';
-}
-
-function goBack() {
-  document.getElementById('list-view').style.display = 'block';
-  document.getElementById('detail-view').style.display = 'none';
-  window.scrollTo(0,0);
-}
-
-function doSearch() {
-  var q = document.getElementById('q').value.toLowerCase();
-  var cards = document.querySelectorAll('.cards-grid .card');
-  var found = 0;
-  for (var i=0; i<cards.length; i++) {
-    var match = !q || cards[i].textContent.toLowerCase().indexOf(q) >= 0;
-    cards[i].style.display = match ? '' : 'none';
-    if (match) found++;
-  }
-  document.getElementById('no-results').style.display = found===0 ? 'block' : 'none';
-}
-
-function filterTag(tag, el) {
-  var tabs = document.querySelectorAll('.nav-tab');
-  for (var i=0; i<tabs.length; i++) tabs[i].classList.remove('active');
-  el.classList.add('active');
-  var cards = document.querySelectorAll('.cards-grid .card');
-  var found = 0;
-  for (var i=0; i<cards.length; i++) {
-    var tags = (cards[i].dataset.tags||'').toLowerCase();
-    var match = tag==='alle' || tags.indexOf(tag.toLowerCase())>=0;
-    cards[i].style.display = match ? '' : 'none';
-    if (match) found++;
-  }
-  document.getElementById('no-results').style.display = found===0 ? 'block' : 'none';
-}
-
-// Date
 var days=['So','Mo','Di','Mi','Do','Fr','Sa'];
 var n=new Date();
-document.getElementById('ldate').textContent = days[n.getDay()]+', '+String(n.getDate()).padStart(2,'0')+'.'+String(n.getMonth()+1).padStart(2,'0')+'.'+n.getFullYear();
-
-// Search on Enter
-document.getElementById('q').addEventListener('keydown',function(e){if(e.key==='Enter')doSearch();});
+document.getElementById('ldate').textContent=days[n.getDay()]+', '+String(n.getDate()).padStart(2,'0')+'.'+String(n.getMonth()+1).padStart(2,'0')+'.'+n.getFullYear();
 document.getElementById('q').addEventListener('input',doSearch);
+document.getElementById('q').addEventListener('keydown',function(e){if(e.key==='Enter')doSearch();});
+function doSearch(){
+  var q=document.getElementById('q').value.toLowerCase();
+  var cards=document.querySelectorAll('.cards-grid .card');
+  var found=0;
+  cards.forEach(function(c){
+    var match=!q||c.textContent.toLowerCase().includes(q);
+    c.style.display=match?'':'none';
+    if(match)found++;
+  });
+  document.getElementById('no-results').style.display=found===0?'block':'none';
+}
+function filterTag(tag,el){
+  document.querySelectorAll('.nav-tab').forEach(function(t){t.classList.remove('active');});
+  el.classList.add('active');
+  var cards=document.querySelectorAll('.cards-grid .card');
+  var found=0;
+  cards.forEach(function(c){
+    var match=tag==='alle'||(c.dataset.tags||'').includes(tag.toLowerCase());
+    c.style.display=match?'':'none';
+    if(match)found++;
+  });
+  document.getElementById('no-results').style.display=found===0?'block':'none';
+}
 </script>
 </body>
 </html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erkrankung im Freistellungszeitraum beseitigt Erfüllung des Langzeitkontos nicht - LexPulse</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1410;--ink-light:#3d342a;--cream:#f8f4ee;--cream-dark:#ede8df;--accent:#c0392b;--gold:#b8860b;--rule:#c8b89a;--rule-light:#e0d5c4;--sidebar-bg:#242018;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:var(--ink);min-height:100vh;font-size:16px;line-height:1.7;}
+a{color:inherit;text-decoration:none;}
+.topbar{background:var(--ink);color:rgba(255,255,255,0.5);padding:8px 24px;display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.04em;}
+.topbar a{color:rgba(255,255,255,0.7);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.3);padding-bottom:1px;}
+.topbar a:hover{color:#fff;}
+.masthead{background:var(--ink);color:#fff;padding:0;border-bottom:4px solid var(--accent);}
+.masthead-inner{max-width:1100px;margin:0 auto;padding:20px 24px 16px;}
+.site-name{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#fff;}
+.site-name span{color:var(--accent);}
+.breadcrumb{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,0.4);margin-top:4px;letter-spacing:0.06em;}
+.breadcrumb a{color:rgba(255,255,255,0.5);}
+.breadcrumb a:hover{color:var(--accent);}
+.wrap{max-width:1100px;margin:0 auto;padding:40px 24px;}
+.urteil-meta{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--accent);padding:24px 28px;margin-bottom:32px;}
+.meta-row{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px;}
+.meta-badge{font-family:'JetBrains Mono',monospace;font-size:11px;padding:3px 10px;letter-spacing:0.06em;}
+.badge-court{background:var(--ink);color:#fff;}
+.badge-date{background:var(--cream-dark);color:var(--ink-light);border:1px solid var(--rule);}
+.badge-az{background:var(--gold);color:#fff;}
+.urteil-titel{font-family:'Playfair Display',serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;line-height:1.2;color:var(--ink);margin-bottom:8px;}
+.ecli{font-family:'JetBrains Mono',monospace;font-size:10px;color:#999;letter-spacing:0.04em;}
+.leitsatz-block{background:var(--sidebar-bg);color:#fff;padding:20px 24px;margin-bottom:36px;border-left:5px solid var(--accent);}
+.leitsatz-block .label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;display:block;}
+.leitsatz-block p{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;line-height:1.7;color:rgba(255,255,255,0.9);}
+.sec-head{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:6px;margin:40px 0 20px;}
+.aufarbeitung{background:#fff;border:1px solid var(--rule);margin-bottom:36px;overflow:hidden;}
+.auf-section{padding:28px 32px;border-bottom:1px solid var(--rule-light);}
+.auf-section:last-child{border-bottom:none;}
+.auf-section h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--rule-light);}
+.auf-section p{font-size:15px;line-height:1.8;color:var(--ink-light);margin-bottom:14px;}
+.auf-section p:last-child{margin-bottom:0;}
+.auf-section ul{margin:10px 0 14px 20px;}
+.auf-section li{font-size:15px;line-height:1.8;color:var(--ink-light);margin-bottom:6px;}
+.auf-section strong{color:var(--ink);font-weight:600;}
+.note-box{background:var(--cream-dark);border-left:3px solid var(--gold);padding:14px 18px;margin:16px 0;font-size:14px;line-height:1.7;color:var(--ink-light);}
+.praxis-box{background:#fff8f0;border:1px solid #f0c080;border-left:4px solid var(--gold);padding:16px 20px;margin:20px 0;}
+.praxis-box .plabel{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:block;}
+.praxis-box p{font-size:14px;line-height:1.7;color:var(--ink-light);margin:0;}
+.normen-box{background:#fff;border:1px solid var(--rule);padding:20px 24px;margin-bottom:32px;}
+.normen-box .label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:block;}
+.normen-list{display:flex;flex-wrap:wrap;gap:8px;}
+.norm-tag{font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--cream-dark);border:1px solid var(--rule);color:var(--ink-light);padding:4px 12px;}
+.volltext-wrap{margin-bottom:40px;}
+.volltext-toggle{width:100%;background:var(--ink);color:#fff;border:none;padding:16px 24px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.volltext-toggle:hover{background:#2d2620;}
+.volltext-body{display:none;background:#fff;border:1px solid var(--rule);border-top:none;}
+.volltext-body.open{display:block;}
+.vt-intro{padding:16px 24px;background:var(--cream-dark);border-bottom:1px solid var(--rule);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-light);letter-spacing:0.04em;}
+.rn-row{display:grid;grid-template-columns:56px 1fr;gap:0;border-bottom:1px solid var(--rule-light);}
+.rn-row:last-child{border-bottom:none;}
+.rn-num{padding:14px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);font-weight:500;background:var(--cream-dark);border-right:1px solid var(--rule-light);display:flex;align-items:flex-start;padding-top:16px;}
+.rn-txt{padding:14px 20px;font-size:14.5px;line-height:1.8;color:var(--ink-light);}
+.rn-heading{grid-column:1/-1;font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#fff;background:var(--ink);padding:12px 20px;}
+.page-footer{background:var(--sidebar-bg);color:rgba(255,255,255,0.4);padding:24px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.06em;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:60px;}
+.page-footer a{color:rgba(255,255,255,0.5);}
+@media(max-width:700px){.wrap{padding:24px 16px;}.auf-section{padding:20px;}.rn-row{grid-template-columns:40px 1fr;}}
+</style>
+</head>
+<body>
+<div class="topbar"><span>LexPulse &middot; Kanzlei-Rechtsprechungsdatenbank</span><a href="index.html">&larr; Zur&uuml;ck zur &Uuml;bersicht</a></div>
+<div class="masthead"><div class="masthead-inner"><div class="site-name">Lex<span>Pulse</span></div><div class="breadcrumb"><a href="index.html">&Uuml;bersicht</a> / LAG Köln &ndash; 3. Senat</div></div></div>
+<div class="wrap">
+<div class="urteil-meta">
+<div class="meta-row"><span class="meta-badge badge-court">LAG Köln &ndash; 3. Senat</span><span class="meta-badge badge-date">10. April 2025</span><span class="meta-badge badge-az">3 SLa 629/24</span></div>
+<div class="urteil-titel">Erkrankung im Freistellungszeitraum beseitigt Erfüllung des Langzeitkontos nicht</div>
+<div class="ecli">openJur 2025, 16182</div>
+</div>
+<div class="leitsatz-block"><span class="label">Amtlicher Leitsatz</span><p>Ein Anspruch auf Arbeitszeitausgleich aus einem tariflichen Langzeitkonto wird bereits durch die Freistellung von der Arbeitspflicht erfüllt. Eine nachträglich eintretende krankheitsbedingte Arbeitsunfähigkeit im Freistellungszeitraum macht die Erfüllung des Ausgleichsanspruchs nicht hinfällig, sofern der Tarifvertrag nicht ausdrücklich die Verschaffung einer zu Erholungszwecken nutzbaren Zeit sicherstellen und das Risiko dem Arbeitgeber zuweisen will.</p></div>
+<div class="normen-box"><span class="label">Einschl&auml;gige Normen</span><div class="normen-list"><span class="norm-tag">§ 7 TV LZK</span><span class="norm-tag">§ 362 Abs. 1 BGB</span><span class="norm-tag">§ 9 BUrlG (analog)</span><span class="norm-tag">Ziff. 9 BV LZK</span></div></div>
+<div class="sec-head">Rechtliche Aufarbeitung</div>
+<div class="aufarbeitung">
+<div class="auf-section"><h3>A. Sachverhalt</h3>
+<p>Der Kläger war seit 1984 in der Metall- und Elektroindustrie NRW beschäftigt. Er schloss mit der Beklagten am 20.06.2023 einen Aufhebungsvertrag zum 30.09.2023. Zum Zeitpunkt des Abschlusses hatte er noch ein Guthaben von <strong>31 Tagen</strong> auf seinem Langzeitkonto. Zum Abbau dieses Guthabens sollte er vom 18.08.2023 bis 29.09.2023 freigestellt werden.</p>
+<p>Ab dem 04.08.2023 — noch vor Beginn der geplanten Freistellung — war der Kläger durchgehend arbeitsunfähig erkrankt, bis über das Ende des Arbeitsverhältnisses hinaus. Er verlangte die Auszahlung der 31 Langzeittage als Störfall nach § 7 lit. b) TV LZK.</p>
+</div>
+
+<div class="auf-section"><h3>B. Grundsatz: Erfüllungswirkung durch Freistellung</h3>
+<p>Nach ständiger BAG-Rechtsprechung wird ein Anspruch auf Arbeitszeitausgleich <strong>bereits durch die Freistellung</strong> von der Arbeitspflicht erfüllt (§ 362 Abs. 1 BGB). Der Arbeitnehmer ist in diesem Fall nicht mehr zur Arbeitsleistung verpflichtet und kann über seine Zeit frei verfügen.</p>
+<p>Eine nachträglich eintretende krankheitsbedingte Arbeitsunfähigkeit macht die Erfüllungswirkung nicht rückwirkend hinfällig. Der Arbeitnehmer trägt grundsätzlich das <strong>Risiko der Nutzungsmöglichkeit</strong> der gewonnenen Freizeit.</p>
+<div class="note-box"><strong>Abgrenzung zum Urlaub:</strong> Anders beim Urlaub (§ 9 BUrlG): Erkrankt ein Arbeitnehmer während des gewährten Urlaubs, werden die Krankheitstage nicht auf den Urlaubsanspruch angerechnet — der Urlaub gilt insoweit als nicht erfüllt. Diese Sonderregel gilt aber nur für den Erholungsurlaub, nicht für den allgemeinen Arbeitszeitausgleich.</div>
+</div>
+
+<div class="auf-section"><h3>C. Ausnahme: Tarifvertragliche Risikozuweisung an den Arbeitgeber</h3>
+<p>Eine Ausnahme gilt, wenn der einschlägige Tarifvertrag ausdrücklich:</p>
+<ul>
+<li>die Verschaffung einer zu <em>Erholungszwecken nutzbaren</em> arbeitsfreien Zeit sicherstellen will, <strong>und</strong></li>
+<li>dem Arbeitgeber bei Festlegung der Freistellungstage das Risiko der Nutzungsmöglichkeit zuweist.</li>
+</ul>
+<p>Der TV LZK enthält keinen solchen Regelungswillen: Weder § 7 TV LZK noch Ziff. 9 BV LZK regeln, dass bei nachträglicher Erkrankung die Erfüllungswirkung der Freistellung entfällt. § 7 TV LZK regelt nur Störfälle beim <em>Abbau</em> des Guthabens (wenn eine Freistellung nicht gewährt werden kann) — nicht beim Risiko der Nutzungsmöglichkeit nach erfolgter Freistellung.</p>
+<div class="praxis-box"><span class="plabel">Klausurrelevanz</span><p>Die Unterscheidung zwischen Arbeitszeitausgleich (kein § 9 BUrlG-Schutz) und Urlaub (§ 9 BUrlG-Schutz) ist klausurrelevant. Beim Arbeitszeitausgleich gilt: Erkrankung nach Freistellungsbeginn = kein erneuter Anspruch, es sei denn der Tarifvertrag weist das Risiko ausdrücklich dem Arbeitgeber zu.</p></div>
+</div>
+</div>
+<div class="sec-head">Vollst&auml;ndiges Urteil (Originaltext)</div>
+<div class="volltext-wrap">
+<button class="volltext-toggle" onclick="var b=this.nextElementSibling;b.classList.toggle('open');this.querySelector('span').textContent=b.classList.contains('open')?'&#9650;':'&#9660;'">Originaltext einblenden &mdash; alle Randnummern <span>&#9660;</span></button>
+<div class="volltext-body"><div class="vt-intro">Originaltext des Gerichts &middot; Alle Randnummern</div><div class="rn-row"><div class="rn-heading">Tatbestand</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;36</div><div class="rn-txt">Am 20.06.2023 schlossen die Parteien einen Aufhebungsvertrag mit Wirkung zum 30.09.2023. Zum Zeitpunkt des Vertragsabschlusses bestand im Langzeitkonto des Klägers ein Guthaben von 31 Tagen. Zum Ausgleich dieses Guthabens sollte der Kläger im Zeitraum vom 18.08.2023 bis 29.09.2023 freigestellt werden; dementsprechend wurden am 26.06.2023 für den vereinbarten Zeitraum 31 Freistellungstage für den Kläger in das Zeiterfassungssystem der Beklagten eingepflegt. Die Genehmigung dieser Freistellung, die der Kläger am 03.07.2023 beantragte, wurde noch am selben Tag durch seinen Vorgesetzten genehmigt.</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;37</div><div class="rn-txt">Vom 04.08.2023 bis über das Ende des Arbeitsverhältnisses am 30.09.2023 hinaus war der Kläger arbeitsunfähig erkrankt. Mit Schreiben seiner Prozessbevollmächtigten vom 15.12.2023 begehrte der Kläger u.a. die Auszahlung von 31 Tagen aus dem Langzeitkonto. Diesen Anspruch hat er mit seiner am 03.05.2024 beim Arbeitsgericht eingegangenen Klage weiterverfolgt.</div></div><div class="rn-row"><div class="rn-heading">Entscheidungsgründe</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;54</div><div class="rn-txt">II. Das Rechtsmittel bleibt jedoch in der Sache ohne Erfolg. Das Arbeitsgericht hat die Klage zu Recht und mit zutreffender Begründung abgewiesen. Der Kläger hat keinen Anspruch auf Zahlung von 8.933,89 Euro brutto als Abgeltung für 31 Tage aus dem Langzeitarbeitskonto nach § 7 lit. b) TV LZK, da bei Beendigung des Arbeitsverhältnisses in dem Langzeitkonto des Klägers kein Guthaben mehr vorhanden war.</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;55</div><div class="rn-txt">1. Das im Langzeitkonto des Klägers nach Abschluss des Aufhebungsvertrags vom 20.06.2023 unstreitig noch bestehende Guthaben des Klägers ist durch die vereinbarungsgemäß am 03.07.2023 für den Zeitraum vom 18.08.2023 bis 29.09.2023 erfolgte Freistellung des Klägers abgebaut und sein Freistellungsanspruch erfüllt worden.</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;56</div><div class="rn-txt">2. Die ab dem 04.08.2023 eingetretene und bis zur Beendigung des Arbeitsverhältnisses am 30.09.2023 andauernde Arbeitsunfähigkeit des Klägers führt zu keiner rückwirkenden Beseitigung der eingetretenen Erfüllungswirkung.</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;57</div><div class="rn-txt">a) Nach der ständigen Rechtsprechung des Bundesarbeitsgerichts, der sich die Kammer anschließt, wird ein Anspruch auf Arbeitszeitausgleich bereits durch die Freistellung von der Arbeitspflicht erfüllt. Der Arbeitnehmer ist in diesem Falle nicht mehr verpflichtet, im Freistellungszeitraum die nach dem Arbeitsvertrag geschuldete Arbeitsleistung zu erbringen. Er kann über diesen Zeitraum frei verfügen, ohne dass die Pflicht des Arbeitgebers zur Zahlung der entsprechenden Vergütung entfällt. Eine nachträglich eintretende krankheitsbedingte Arbeitsunfähigkeit im Freistellungszeitraum macht die Erfüllung des Ausgleichsanspruchs nicht hinfällig. Demnach trägt grundsätzlich der Arbeitnehmer das Risiko, die durch Arbeitsbefreiung als Arbeitszeitausgleich gewonnene Freizeit auch tatsächlich nach seinen Vorstellungen nutzen zu können (BAG, Urteil vom 11. September 2003 – 6 AZR 374/02 –, BAGE 107, 278-285, Rn. 26).</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;58</div><div class="rn-txt">b) Etwas anderes gilt im Falle eines tarifvertraglich geregelten Arbeitszeitausgleichs nur dann, wenn der Tarifvertrag mit dem Freizeitausgleich die Verschaffung einer zu Erholungszwecken nutzbaren arbeitsfreien Zeit sicherstellen und dazu dem Arbeitgeber bei einer zuvor erfolgten Festlegung der freien Arbeitstage das Risiko dieser Nutzungsmöglichkeit zuweist (BAG, Urteil vom 11. September 2003 – 6 AZR 374/02 –, Rn. 27). Ein dementsprechender Wille der Tarifvertragsparteien ist dem TV LZK nicht zu entnehmen.</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;59</div><div class="rn-txt">aa) Er ergibt sich insbesondere nicht aus der Regelung des § 7 lit. b) TV LZK. § 7 lit. b) TV LZK bestimmt, dass eine Auszahlung von Langzeitguthaben ausnahmsweise bei Beendigung des Arbeitsverhältnisses erfolgt, wenn das Guthaben aus persönlichen oder betrieblichen Gründen nicht abgebaut werden konnte. § 7 TV LZK betrifft seinem ausdrücklichen Wortlaut nach somit eine 'Störung' beim Abbau des Langzeitguthabens, d.h. wenn eine Freistellung nicht oder nicht vollständig gewährt werden kann; eine Regelung, nach der der Arbeitgeber bei erfolgtem Abbau bzw. bei erfolgter Freistellung das Risiko der Nutzungsmöglichkeit der gewonnenen Freizeit durch den Arbeitnehmer zu tragen hätte, enthält § 7 TV LZK nicht.</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;63</div><div class="rn-txt">(2) Keine dieser Bestimmungen sieht die Erholung des Arbeitnehmers als maßgeblichen Zweck der arbeitsfreien Zeit vor. Vielmehr dienen die benannten Konstellationen gerade nicht der Erholung des Arbeitnehmers (und dem Erhalt der Arbeitsfähigkeit), sondern vorrangig in der Sphäre des Arbeitnehmers liegenden Interessen und Zielsetzungen.</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;64</div><div class="rn-txt">c) Schließlich folgt ein anderes Ergebnis auch nicht aus dem Charakter des Langzeitkontos als insolvenzgesichertes Wertguthaben. Insbesondere führt die Ausgestaltung des Langzeitkontos nicht zu einer Unanwendbarkeit der Rechtsprechung des Bundesarbeitsgerichts zum Ausgleich von Arbeitszeitguthaben bei nach der Freistellungserklärung eingetretener Erkrankung des Arbeitnehmers. Denn für die hinsichtlich des Anspruchs des Arbeitnehmers auf Ausgleich seines Zeitguthabens aus dem Arbeitszeitkonto durch die bezahlte Arbeitsbefreiung eintretende Erfüllungswirkung ist es unerheblich, ob das Arbeitszeitkonto zuvor durch die Zuführung von (Über-)Stunden oder Entgeltbestandteile befüllt worden ist.</div></div></div>
+</div>
+<a href="index.html" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:10px 20px;margin-bottom:40px;">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+</div>
+<div class="page-footer"><span>LexPulse &middot; Kanzlei-Rechtsprechungsdatenbank</span><a href="index.html">Alle Entscheidungen</a><span>Nur zur internen Verwendung &middot; Keine Rechtsberatung</span></div>
+</body>
+</html>

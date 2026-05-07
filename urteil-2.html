@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krankheitsbedingte Kündigung: Fehlzeitdauer, BEM-Pflicht und Negativprognose - LexPulse</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1410;--ink-light:#3d342a;--cream:#f8f4ee;--cream-dark:#ede8df;--accent:#c0392b;--gold:#b8860b;--rule:#c8b89a;--rule-light:#e0d5c4;--sidebar-bg:#242018;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:var(--ink);min-height:100vh;font-size:16px;line-height:1.7;}
+a{color:inherit;text-decoration:none;}
+.topbar{background:var(--ink);color:rgba(255,255,255,0.5);padding:8px 24px;display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.04em;}
+.topbar a{color:rgba(255,255,255,0.7);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.3);padding-bottom:1px;}
+.topbar a:hover{color:#fff;}
+.masthead{background:var(--ink);color:#fff;padding:0;border-bottom:4px solid var(--accent);}
+.masthead-inner{max-width:1100px;margin:0 auto;padding:20px 24px 16px;}
+.site-name{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#fff;}
+.site-name span{color:var(--accent);}
+.breadcrumb{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,0.4);margin-top:4px;letter-spacing:0.06em;}
+.breadcrumb a{color:rgba(255,255,255,0.5);}
+.breadcrumb a:hover{color:var(--accent);}
+.wrap{max-width:1100px;margin:0 auto;padding:40px 24px;}
+.urteil-meta{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--accent);padding:24px 28px;margin-bottom:32px;}
+.meta-row{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px;}
+.meta-badge{font-family:'JetBrains Mono',monospace;font-size:11px;padding:3px 10px;letter-spacing:0.06em;}
+.badge-court{background:var(--ink);color:#fff;}
+.badge-date{background:var(--cream-dark);color:var(--ink-light);border:1px solid var(--rule);}
+.badge-az{background:var(--gold);color:#fff;}
+.urteil-titel{font-family:'Playfair Display',serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;line-height:1.2;color:var(--ink);margin-bottom:8px;}
+.ecli{font-family:'JetBrains Mono',monospace;font-size:10px;color:#999;letter-spacing:0.04em;}
+.leitsatz-block{background:var(--sidebar-bg);color:#fff;padding:20px 24px;margin-bottom:36px;border-left:5px solid var(--accent);}
+.leitsatz-block .label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;display:block;}
+.leitsatz-block p{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;line-height:1.7;color:rgba(255,255,255,0.9);}
+.sec-head{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:6px;margin:40px 0 20px;}
+.aufarbeitung{background:#fff;border:1px solid var(--rule);margin-bottom:36px;overflow:hidden;}
+.auf-section{padding:28px 32px;border-bottom:1px solid var(--rule-light);}
+.auf-section:last-child{border-bottom:none;}
+.auf-section h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--rule-light);}
+.auf-section p{font-size:15px;line-height:1.8;color:var(--ink-light);margin-bottom:14px;}
+.auf-section p:last-child{margin-bottom:0;}
+.auf-section ul{margin:10px 0 14px 20px;}
+.auf-section li{font-size:15px;line-height:1.8;color:var(--ink-light);margin-bottom:6px;}
+.auf-section strong{color:var(--ink);font-weight:600;}
+.note-box{background:var(--cream-dark);border-left:3px solid var(--gold);padding:14px 18px;margin:16px 0;font-size:14px;line-height:1.7;color:var(--ink-light);}
+.praxis-box{background:#fff8f0;border:1px solid #f0c080;border-left:4px solid var(--gold);padding:16px 20px;margin:20px 0;}
+.praxis-box .plabel{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:block;}
+.praxis-box p{font-size:14px;line-height:1.7;color:var(--ink-light);margin:0;}
+.normen-box{background:#fff;border:1px solid var(--rule);padding:20px 24px;margin-bottom:32px;}
+.normen-box .label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:block;}
+.normen-list{display:flex;flex-wrap:wrap;gap:8px;}
+.norm-tag{font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--cream-dark);border:1px solid var(--rule);color:var(--ink-light);padding:4px 12px;}
+.volltext-wrap{margin-bottom:40px;}
+.volltext-toggle{width:100%;background:var(--ink);color:#fff;border:none;padding:16px 24px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.volltext-toggle:hover{background:#2d2620;}
+.volltext-body{display:none;background:#fff;border:1px solid var(--rule);border-top:none;}
+.volltext-body.open{display:block;}
+.vt-intro{padding:16px 24px;background:var(--cream-dark);border-bottom:1px solid var(--rule);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-light);letter-spacing:0.04em;}
+.rn-row{display:grid;grid-template-columns:56px 1fr;gap:0;border-bottom:1px solid var(--rule-light);}
+.rn-row:last-child{border-bottom:none;}
+.rn-num{padding:14px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);font-weight:500;background:var(--cream-dark);border-right:1px solid var(--rule-light);display:flex;align-items:flex-start;padding-top:16px;}
+.rn-txt{padding:14px 20px;font-size:14.5px;line-height:1.8;color:var(--ink-light);}
+.rn-heading{grid-column:1/-1;font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#fff;background:var(--ink);padding:12px 20px;}
+.page-footer{background:var(--sidebar-bg);color:rgba(255,255,255,0.4);padding:24px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.06em;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:60px;}
+.page-footer a{color:rgba(255,255,255,0.5);}
+@media(max-width:700px){.wrap{padding:24px 16px;}.auf-section{padding:20px;}.rn-row{grid-template-columns:40px 1fr;}}
+</style>
+</head>
+<body>
+<div class="topbar"><span>LexPulse &middot; Kanzlei-Rechtsprechungsdatenbank</span><a href="index.html">&larr; Zur&uuml;ck zur &Uuml;bersicht</a></div>
+<div class="masthead"><div class="masthead-inner"><div class="site-name">Lex<span>Pulse</span></div><div class="breadcrumb"><a href="index.html">&Uuml;bersicht</a> / BAG-Rechtsprechung (Recherche)</div></div></div>
+<div class="wrap">
+<div class="urteil-meta">
+<div class="meta-row"><span class="meta-badge badge-court">BAG-Rechtsprechung (Recherche)</span><span class="meta-badge badge-date">Aktuell (Stand 2025)</span><span class="meta-badge badge-az">§ 1 KSchG · § 167 SGB IX · BAG 2 AZR 755/13 u.a.</span></div>
+<div class="urteil-titel">Krankheitsbedingte Kündigung: Fehlzeitdauer, BEM-Pflicht und Negativprognose</div>
+<div class="ecli">–</div>
+</div>
+<div class="leitsatz-block"><span class="label">Amtlicher Leitsatz</span><p>Eine personenbedingte Kündigung wegen Krankheit ist nur sozial gerechtfertigt, wenn eine negative Gesundheitsprognose vorliegt, betriebliche Interessen erheblich beeinträchtigt sind und die Interessenabwägung zugunsten des Arbeitgebers ausfällt. Als Richtwert für eine tragfähige Negativprognose gilt eine ununterbrochene Fehlzeit von mindestens ca. 18 Monaten ohne absehbare Besserung. Ein fehlendes BEM erhöht die Anforderungen an die Rechtfertigung der Kündigung.</p></div>
+<div class="normen-box"><span class="label">Einschl&auml;gige Normen</span><div class="normen-list"><span class="norm-tag">§ 1 Abs. 2 KSchG</span><span class="norm-tag">§ 167 Abs. 2 SGB IX</span><span class="norm-tag">§ 3 EFZG</span><span class="norm-tag">BAG 2 AZR 755/13</span><span class="norm-tag">BAG 2 AZR 565/14</span></div></div>
+<div class="sec-head">Rechtliche Aufarbeitung</div>
+<div class="aufarbeitung">
+<div class="auf-section"><h3>A. Betriebliches Eingliederungsmanagement (BEM) – § 167 Abs. 2 SGB IX</h3>
+<p>Das BEM ist eine <strong>Pflichtmaßnahme</strong> für jeden Arbeitgeber, unabhängig von Betriebsgröße und Schwerbehinderung der betroffenen Person.</p>
+<p><strong>Auslöser:</strong> Das BEM ist anzubieten, wenn ein Beschäftigter innerhalb von 12 Monaten länger als sechs Wochen (42 Kalendertage) krankheitsbedingt arbeitsunfähig war — egal ob ununterbrochen oder wiederholt. Grund und Art der Erkrankung spielen keine Rolle.</p>
+<p><strong>Freiwilligkeit:</strong> Die Durchführung setzt die Zustimmung der betroffenen Person voraus. Der Arbeitgeber muss das BEM ordnungsgemäß anbieten — erzwingen kann er es nicht.</p>
+<div class="note-box"><strong>Rechtsfolge eines fehlenden BEM:</strong> Kündigung wird nicht automatisch unwirksam, aber die Darlegungsanforderungen des Arbeitgebers im Kündigungsschutzprozess steigen erheblich. Er muss darlegen, dass auch ein ordnungsgemäß durchgeführtes BEM keine Möglichkeit zur Weiterbeschäftigung ergeben hätte.</div>
+</div>
+
+<div class="auf-section"><h3>B. Drei-Stufen-Prüfung der krankheitsbedingten Kündigung</h3>
+<p><strong>Stufe 1 – Negative Gesundheitsprognose:</strong> Zum Zeitpunkt des Kündigungszugangs muss anhand objektiver Tatsachen zu erwarten sein, dass der Arbeitnehmer auch in Zukunft in erheblichem Umfang erkranken wird. Bei Langzeiterkrankung bedeutet das: keine baldige Genesung absehbar. Bei häufigen Kurzerkrankungen: Muster der bisherigen Fehlzeiten lässt auf fortdauernde Anfälligkeit schließen.</p>
+<p><strong>Stufe 2 – Erhebliche Beeinträchtigung betrieblicher Interessen:</strong> Vergangene und prognostizierte Ausfälle müssen den Betrieb spürbar belasten — durch Lohnfortzahlungskosten, Ablaufstörungen oder Vertretungsprobleme. Die Fehlzeiten müssen zu einer nicht mehr hinnehmbaren Beeinträchtigung führen.</p>
+<p><strong>Stufe 3 – Interessenabwägung:</strong> Abwägung zwischen betrieblicher Belastung und individuellem Schutzinteresse. Zu berücksichtigen: Dauer der Betriebszugehörigkeit, Lebensalter, Erkrankungsursachen, bisheriger Verlauf, zumutbare Alternativbeschäftigung.</p>
+</div>
+
+<div class="auf-section"><h3>C. Richtwerte für die Fehlzeitdauer</h3>
+<p><strong>Kurzerkrankungen:</strong> Sechs Monate Fehlzeit pro Jahr liegen eindeutig unterhalb der kritischen Schwelle. Als kritischer Wert bei wiederholten Kurzerkrankungen gilt eine Fehlzeitenquote von ca. <strong>25–40%</strong> der jährlichen Arbeitstage über mehrere Jahre hinweg.</p>
+<p><strong>Langzeiterkrankung:</strong> Als Orientierungswert gilt, dass erst bei einer ununterbrochenen Krankheitsdauer von ca. <strong>18 Monaten</strong> und fehlender Genesungsaussicht (keine Arbeitsfähigkeit in den nächsten 24 Monaten absehbar) eine tragfähige Negativprognose vorliegt. Das BAG wertet dies als der dauerhaften Leistungsunfähigkeit gleichkommend.</p>
+<div class="praxis-box"><span class="plabel">Konkrete Berechnung</span><p>Fehlzeit 06.05.2024 bis 15.12.2025 = 589 Kalendertage = 84 Wochen + 1 Tag. Diese Fehlzeit überschreitet die relevante 18-Monats-Schwelle (ca. 78 Wochen) deutlich. Bei weiter fehlender Genesungsaussicht dürfte eine Negativprognose bejahbar sein.</p></div>
+</div>
+</div>
+<div class="sec-head">Vollst&auml;ndiges Urteil (Originaltext)</div>
+<div class="volltext-wrap">
+<button class="volltext-toggle" onclick="var b=this.nextElementSibling;b.classList.toggle('open');this.querySelector('span').textContent=b.classList.contains('open')?'&#9650;':'&#9660;'">Originaltext einblenden &mdash; alle Randnummern <span>&#9660;</span></button>
+<div class="volltext-body"><div class="vt-intro">Originaltext des Gerichts &middot; Alle Randnummern</div><div class="rn-row"><div class="rn-heading">Betriebliches Eingliederungsmanagement – § 167 Abs. 2 SGB IX</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;–</div><div class="rn-txt">Das BEM ist gesetzlich in § 167 Abs. 2 SGB IX verankert und wurde 2004 eingeführt. Diese Vorschrift gilt für alle Beschäftigten – unabhängig von einer Schwerbehinderung oder Gleichstellung.</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;–</div><div class="rn-txt">Auslöser: Ein BEM ist vom Arbeitgeber anzubieten, wenn eine Arbeitnehmerin innerhalb von 12 Monaten länger als sechs Wochen krankheitsbedingt arbeitsunfähig war. Dabei zählt jede krankheitsbedingte Fehlzeit – egal ob ununterbrochen (Langzeiterkrankung) oder wiederholt (mehrere Kurzerkrankungen) – sofern sie in Summe mehr als sechs Wochen (42 Kalendertage) innerhalb eines Jahres beträgt. Grund und Art der Erkrankung spielen keine Rolle; einzig die Dauer der Arbeitsunfähigkeit ist maßgeblich.</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;–</div><div class="rn-txt">Freiwilligkeit: Die Durchführung des BEM setzt die Zustimmung der betroffenen Person voraus. Derdie Arbeitnehmerin muss also bereit sein, am BEM teilzunehmen – eine Durchführung gegen den Willen der Person ist unzulässig.</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;–</div><div class="rn-txt">§ 167 Abs. 2 Satz 1 SGB IX lautet auszugsweise: 'Sind Beschäftigte innerhalb eines Jahres länger als sechs Wochen ununterbrochen oder wiederholt arbeitsunfähig, klärt der Arbeitgeber mit der zuständigen Interessenvertretung der Arbeitnehmer und dem betroffenen Beschäftigten mit Zustimmung des Betroffenen die Möglichkeiten, wie die Arbeitsunfähigkeit überwunden werden kann.'</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;–</div><div class="rn-txt">Unterlässt der Arbeitgeber das BEM, kann dies im Kündigungsschutzprozess negativ für ihn gewertet werden; ein fehlendes BEM macht eine Kündigung zwar nicht automatisch unwirksam, erhöht aber die Anforderungen an die Rechtfertigung der Kündigung.</div></div><div class="rn-row"><div class="rn-heading">Krankheitsbedingte (personenbedingte) Kündigung – Drei-Stufen-Prüfung</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;–</div><div class="rn-txt">Eine Kündigung wegen Krankheit ist als personenbedingte Kündigung im Sinne des Kündigungsschutzgesetzes (KSchG) nur wirksam, wenn sie sozial gerechtfertigt ist (§ 1 Abs. 2 KSchG). Die Rechtsprechung – insbesondere das Bundesarbeitsgericht (BAG) – stellt dafür drei Prüfschritte auf.</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;–</div><div class="rn-txt">Negative Gesundheitsprognose: Zum Zeitpunkt des Kündigungszugangs muss anhand objektiver Tatsachen zu erwarten sein, dass der/die Arbeitnehmerin auch in Zukunft in erheblichem Umfang weiter erkranken wird. Bei einer lang andauernden Erkrankung bedeutet das, dass keine baldige Genesung zu erwarten ist; bei häufigen Kurzerkrankungen müssen Umfang und Muster der bisherigen Fehlzeiten auf eine fortdauernde Anfälligkeit schließen lassen.</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;–</div><div class="rn-txt">Erhebliche Beeinträchtigung betrieblicher Interessen: Die vergangenen und voraussichtlich zukünftigen Krankheitsausfälle müssen den Betrieb spürbar belasten. Dies kann etwa durch erhebliche Lohnfortzahlungskosten oder betriebliche Ablaufstörungen (z. B. Personalausfall, Produktionseinbußen) der Fall sein.</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;–</div><div class="rn-txt">Interessenabwägung: Schließlich ist abzuwägen, ob dem Arbeitgeber unter Berücksichtigung aller Umstände – Dauer der Betriebszugehörigkeit, Lebensalter, Ursachen der Erkrankung, bisheriger Verlauf des Arbeitsverhältnisses, zumutbare Alternativbeschäftigung etc. – die Fortsetzung des Arbeitsverhältnisses noch zugemutet werden kann.</div></div><div class="rn-row"><div class="rn-heading">Richtwerte für die Fehlzeitdauer</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;–</div><div class="rn-txt">Eine Fehlzeit von nur wenigen Monaten (z. B. sechs oder acht Monaten) reicht in der Regel nicht aus, um eine negative Prognose zu begründen. Das BAG betrachtet eine Fehlzeitquote von z. B. nur sechs Wochen pro Jahr als unerheblich gering.</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;–</div><div class="rn-txt">Als grober Orientierungswert gilt, dass erst bei einer ununterbrochenen Krankheitsdauer von circa 18 Monaten (1,5 Jahren) und keiner absehbaren Besserung die Prognose so negativ ist, dass eine Kündigung gerechtfertigt sein kann. Das BAG hat etwa entschieden, dass eine bereits rund eineinhalb Jahre andauernde Arbeitsunfähigkeit, verbunden mit der Erwartung, dass innerhalb weiterer 24 Monate keine Wiederherstellung der Arbeitsfähigkeit zu erwarten ist, einer dauerhaften Leistungsunfähigkeit gleichkommt.</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;–</div><div class="rn-txt">Bei häufigen Kurzerkrankungen: In der Praxis der Arbeitsgerichte wird ein kritischer Wert oft erst bei einer Fehlzeitenquote von etwa 25% bis 40% der jährlichen Arbeitstage gesehen.</div></div><div class="rn-row"><div class="rn-heading">Fehlzeitberechnung: 06.05.2024 bis 15.12.2025</div></div><div class="rn-row"><div class="rn-num">Rn.&nbsp;–</div><div class="rn-txt">Die Mitarbeiterin war vom 6. Mai 2024 bis zum 15. Dezember 2025 durchgehend krankgeschrieben. Dieser Zeitraum (einschließlich beider genannter Daten) umfasst exakt 84 Wochen und 1 Tag, was insgesamt 589 Kalendertagen entspricht (366 Tage für 12 Monate ab 6.5.2024 bis 5.5.2025, plus 223 Tage vom 6.5.2025 bis 15.12.2025). Damit fehlt die Arbeitnehmerin in diesem Zeitraum 84 Wochen + 1 Tag am Arbeitsplatz. Zum Vergleich: 6 Wochen Fehlzeit entsprechen 42 Tagen – hier liegt die Abwesenheit also bei einem Vielfachen davon.</div></div></div>
+</div>
+<a href="index.html" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:10px 20px;margin-bottom:40px;">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+</div>
+<div class="page-footer"><span>LexPulse &middot; Kanzlei-Rechtsprechungsdatenbank</span><a href="index.html">Alle Entscheidungen</a><span>Nur zur internen Verwendung &middot; Keine Rechtsberatung</span></div>
+</body>
+</html>
